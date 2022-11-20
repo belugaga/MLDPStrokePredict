@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Project: Stroke</title>
+
+    <style>
+      /* Add a black background color to the top navigation */
+      .topnav {
+        background-color: rgba(145, 132, 132, 0.303);
+        overflow: hidden;
+      }
+
+      /* Style the links inside the navigation bar */
+      .topnav a {
+        color: #1a0909;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+      }
+
+      .body {
+        font-family: Tahoma, sans-serif;
+      }
+
+      .center {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        
+      }
+
+      h1 {text-align: center; 
+        font-family: Arial, Helvetica, sans-serif;
+      }
+    </style>
+
+  </head>
+
+  <body>
+    <div class="topnav a, bodyTitle, center">
+      <a class="topnav a" href="http://127.0.0.1:5000/">
+        <img
+          src="https://i.pinimg.com/originals/6a/8f/8f/6a8f8f9f5f34560405de991efefd6e82.png"
+          width="100"
+          height="100"
+          alt="logo_image"
+          class="center"
+          
+        />
+      </a>
+      <h1>Health Predictor Website</h1>
+    </div>
+
+    <h2>Stroke Predictor</h2>
+    <p>Predict your chances of getting stroke today!</p>
+
+    <form action="/guess" method="post", class="body">
+
+      <label>What is your age now?</label>
+      <br>
+      <input type="text" 
+      name="Your Age" 
+      placeholder="Age" 
+      required 
+      />
+      <br><br>
+
+      <label>Do you have hypertension?</label>
+      <br>
+      <input
+        type="radio"
+        id="hypertensionY"
+        name="hypertension"
+        value="1"
+        required
+      />
+      <label id="hypertensionY" for="hypertension">Yes</label><br>
+      <input
+        type="radio"
+        id="hypertensionN"
+        name="hypertension"
+        value="0"
+      />
+      <label id="hypertensionN" for="hypertension">No</label><br>
+      <br><br>
+
+      <label>Do you have heart disease?</label>
+      <br>
+      <input
+        type="radio"
+        id="heartY"
+        name="heart"
+        value="1"
+        required
+      />
+      <label id="heartY" for="heart">Yes</label><br>
+      <input
+        type="radio"
+        id="heartN"
+        name="heart"
+        value="0"
+      />
+      <label id="heartN" for="heart">No</label>
+      <br><br>
+
+      <label>What is your AVERAGE glucose level?</label>
+      <br>
+      <input
+        type="text"
+        name="What is you glucose level?"
+        placeholder="Enter a number"
+        required
+      />
+      <br><br>
+
+      <label>What is your Body Mass Index (BMI)? BMI=weight/(height*height)</label>
+      <br>
+      <input
+        type="text"
+        name="Your BMI"
+        placeholder="Enter a number"
+        required
+      />
+      <br><br>
+
+      <label>What is your gender?</label>
+      <br>
+      <input
+        type="radio"
+        id="female"
+        name="gender"
+        value="0"
+        required
+      />
+      <label id="female" for="gender">Female</label>
+      <input
+        type="radio"
+        id="male"
+        name="gender"
+        value="1"
+      />
+      <label id="male" for="gender">Male</label>
+      <br><br>
+
+      <label>Have you married before?</label>
+      <br>
+      <input
+        type="radio"
+        id="marriedY"
+        name="married"
+        value="1"
+        required
+      />
+      <label id="marriedY" for="married">Yes</label>
+      <input
+        type="radio"
+        id="marriedN"
+        name="married"
+        value="0"
+      />
+      <label id="marriedN" for="married">No</label>
+      <br><br>
+
+      <label>What is your residence type?</label>
+      <br>
+      <input
+        type="radio"
+        id="residenceu"
+        name="residence"
+        value="1"
+        required
+      />
+      <label id="residenceu" for="residence">Urban</label>
+      <input
+        type="radio"
+        id="residencer"
+        name="residence"
+        value="0"
+      />
+      <label id="residencer" for="residence">Rural</label>
+      <br><br>
+
+      <label>Have you NEVER smoke BEFORE?</label>
+      <br>
+      <input
+        type="radio"
+        name="smoke"
+        id="smokeNever"
+        value="1"
+        required
+      />
+      <label id="smokeNever" for="smoke">Yes</label>
+      <input
+        type="radio"
+        name="smoke"
+        id="smokeBefore"
+        value="0"
+      />
+      <label id="smokeBefore" for="smoke">No</label>
+        <br>
+
+      <br />
+
+      <button type="submit">Predict Stroke</button>
+    </form>
+
+    <p>{{ stroke_prediction }}</p>
+
+    <footer>By Zhang Haorui 2101806D</footer>
+  </body>
+</html>

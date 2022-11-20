@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <title>Project: Iris</title>
+  <style>
+	body {
+		font-family: Verdana;
+		font-size: 12px;
+	}
+  </style> 
+</head>
+
+<body>
+	<h1>Stroke Predictor</h1>
+	<p>Predict your chances of getiing stroke today!<p>
+
+    <form action="/predict"method="post">
+    	<input type="text" name="Your Age" placeholder="Age" required><br>
+        <input type="text" name="Do you have hypertension?" placeholder="1 for yes, 0 for no" required><br>
+		    <input type="text" name="Do you have heart disease" placeholder="1 for yes, 0 for no" required><br>
+        <input type="text" name="What is you glucose level?" placeholder="Enter a number" required><br>
+        <input type="text" name="Your BMI" placeholder="Enter a number" required><br>
+        <input type="text" name="Gender" placeholder="1 for female, 0 for male" required><br>
+        <input type="text" name="Are you married before?" placeholder="1 for yes, 0 for no" required><br>
+        <input type="text" name="What is your residence?" placeholder="1 for urban, 0 for rural" required><br>
+        <input type="text" name="Did you smoke before" placeholder="1 for yes, 0 for no" required><br>
+        
+        <br>
+
+		<button type="submit">Predict Stroke</button>
+    </form>
+
+   <p>{{ stroke_prediction }}</p>
+</body>
+</html>
